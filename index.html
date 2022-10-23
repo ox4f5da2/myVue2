@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的第一个 Vue</title>
+</head>
+<body>
+  <div id="app" class="box" style="color: red; font-size:20px;">
+    hello {{ name1 }}, welcome to Karl's mini Vue.
+    <span style="color: green;">
+      <span>{{ message }}</span>
+      <strong class="test">Test</strong>
+    </span>
+    <p>Today is a nice day.</p>
+  </div>
+
+  <script type="module">
+    import Vue from './src/index.js';
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        name1: 'xxx',
+        message: 'Hello World!'
+      }
+    })
+  </script>
+</body>
+</html>
