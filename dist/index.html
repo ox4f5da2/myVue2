@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的第一个 Vue</title>
+</head>
+
+<body>
+  <div id="app" class="box" style="color: red; font-size:20px;">
+    hello {{ name1 }}, welcome to {{name1}}'s mini Vue.
+    <span style="color: green;">
+      <span>{{ message }}</span>
+      <strong class="test">Test</strong>
+    </span>
+    <p>Today is a nice day.</p>
+    <p>{{ list }}</p>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data() {
+        return {
+          name1: 'xxx',
+          name: [],
+          message: 'Hello World!',
+          obj: {
+            a: {
+              b: 1,
+              d: {
+                e: [999]
+              }
+            },
+            c: 2,
+          },
+          list: [1, 2, 3, { a: 2 }]
+        }
+      }
+    })
+    console.log('数据劫持测试：\n');
+    console.log(vm);
+    console.log('name1: ', vm.name1);
+    console.log('obj.a.b: ', vm.obj.a.b);
+    console.log('-------------');
+    console.log(vm.obj.a.d.e.reverse());
+    vm.name.push({ a: 1 });
+    vm.name[0].a
+    // 数据改变视图更新
+    console.log('-------------\n视图更新操作: \n');
+    vm.name1 = 'aaa';
+    vm.name1 = 'bbb';
+    vm.name1 = 'ccc';
+    vm.message = 'hello zy!';
+    setTimeout(() => {
+      console.log("获取最新的DOM元素: ", vm.$el.outerHTML);
+      console.log('-------------');
+      console.log('数组更改数据更新页面：');
+      vm.list.push(4, 5, 6);
+      vm.list[1] = 2;
+      console.log('-------------');
+    }, 2000);
+  </script>
+</body>
+
+</html>

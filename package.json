@@ -1,0 +1,27 @@
+{
+  "name": "myvue2",
+  "version": "1.0.0",
+  "description": "这是一个仿照vue2功能搭建的迷你版vue，主要为了手写简单实现vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rollup -cw"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ox4f5da2/myVue2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ox4f5da2/myVue2/issues"
+  },
+  "homepage": "https://github.com/ox4f5da2/myVue2#readme",
+  "dependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
+    "rollup": "^2.79.1",
+    "rollup-plugin-babel": "^4.4.0"
+  }
+}

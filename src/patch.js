@@ -40,8 +40,10 @@ function patch(oldNode, vnode) {
   const el = createElement(vnode),
     parent = oldNode.parentNode;
   console.log('真实DOM: ', el, '\n--------------------');
+
   parent.insertAdjacentElement('beforeend', el);
   parent.removeChild(oldNode);
+  return el;
 }
 
 export {

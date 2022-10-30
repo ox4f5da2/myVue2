@@ -12,7 +12,7 @@ function genTextNode(text) {
     if (index > lastIndex) {
       tokens.push(JSON.stringify(text.substring(lastIndex, index)));
     }
-    tokens.push(`_s($data.${match[1].trim()})`);
+    tokens.push(`_s(${match[1].trim()})`);
     lastIndex = index + match[0].length;
   }
   if (lastIndex < text.length) {
